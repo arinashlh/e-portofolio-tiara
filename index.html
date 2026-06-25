@@ -57,7 +57,6 @@
                     <a href="#pembimbing" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Pembimbing</a>
                     <a href="#artefak" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Artefak</a>
                 </div>
-                <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-pastel-800 hover:text-pastel-500 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
@@ -65,7 +64,6 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-pastel-50 border-t border-pastel-200 shadow-soft">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
                 <a href="#profil" class="block px-3 py-2 text-pastel-800 font-medium">Profil</a>
@@ -113,12 +111,16 @@
                     <a href="#artefak" class="bg-white border-2 border-pastel-200 text-pastel-800 hover:border-pastel-500 hover:text-pastel-500 px-8 py-3 rounded-full font-medium transition-all">Lihat Artefak</a>
                 </div>
             </div>
+            
             <div class="order-1 lg:order-2 flex justify-center fade-up relative">
-                <!-- Decorative background blob -->
                 <div class="absolute inset-0 bg-gradient-to-tr from-pastel-200 to-pastel-100 rounded-full blur-3xl opacity-60 w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10"></div>
-                <!-- Profile Image (Toga) -->
-                <img src="https://placehold.co/500x600/d8b4fe/581c87?text=Foto+Wanita+Kalung+Toga" alt="Tiara Bela Oktaviani - Toga" class="rounded-[2.5rem] shadow-2xl object-cover border-8 border-white w-[300px] h-[400px] lg:w-[400px] lg:h-[500px] rotate-3 hover:rotate-0 transition-all duration-500">
+                
+                <!-- Profile Image (Toga) - FIX: Crop paksa bagian kanan foto -->
+                <div class="w-[300px] h-[400px] lg:w-[450px] lg:h-[500px] rounded-[2.5rem] shadow-2xl border-8 border-white bg-white overflow-hidden rotate-3 hover:rotate-0 transition-all duration-500 flex justify-start items-center">
+                    <img src="wisuda-titi.jpg" alt="Tiara Bela Oktaviani - Toga" class="w-[150%] max-w-none h-full object-cover object-[15%_center]">
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -126,9 +128,8 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="fade-up relative">
-                    <!-- Selfie Image -->
                     <div class="absolute -inset-4 bg-pastel-200 rounded-[2.5rem] transform -rotate-3 z-0"></div>
-                    <img src="https://placehold.co/400x500/e9d5ff/6b21a8?text=Foto+Selfie+Tiara" alt="Selfie Tiara" class="relative z-10 rounded-[2rem] shadow-lg w-full h-auto object-cover">
+                    <img src="profil-titi.jpg" alt="Selfie Tiara" class="relative z-10 rounded-[2rem] shadow-lg w-full h-auto object-cover">
                 </div>
                 <div class="fade-up">
                     <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-6 flex items-center gap-3">
@@ -151,7 +152,6 @@
     </section>
 
     <section class="py-24 bg-pastel-900 text-center relative overflow-hidden">
-        <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#d8b4fe 1px, transparent 1px); background-size: 20px 20px;"></div>
         
         <div class="max-w-4xl mx-auto px-6 relative z-10 fade-up">
@@ -171,7 +171,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Inspirasi Card -->
                 <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 hover:-translate-y-2 transition-transform duration-300 fade-up">
                     <div class="w-14 h-14 bg-pastel-100 rounded-2xl flex items-center justify-center text-pastel-500 mb-6">
                         <i class="fas fa-lightbulb text-2xl"></i>
@@ -182,7 +181,6 @@
                     </p>
                 </div>
 
-                <!-- Tujuan Card -->
                 <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 hover:-translate-y-2 transition-transform duration-300 fade-up" style="transition-delay: 100ms;">
                     <div class="w-14 h-14 bg-pastel-100 rounded-2xl flex items-center justify-center text-pastel-500 mb-6">
                         <i class="fas fa-bullseye text-2xl"></i>
@@ -199,7 +197,6 @@
     <section id="lokasi" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <!-- Bandung -->
                 <div class="fade-up">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-12 bg-pastel-100 rounded-full flex items-center justify-center text-pastel-500">
@@ -220,7 +217,6 @@
                     </div>
                 </div>
 
-                <!-- SMKN 1 Bandung -->
                 <div class="fade-up" style="transition-delay: 150ms;">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-12 bg-pastel-100 rounded-full flex items-center justify-center text-pastel-500">
@@ -232,9 +228,7 @@
                         SMK Negeri 1 Bandung merupakan salah satu SMK negeri perintis di Kota Bandung yang berakreditasi A dan berfokus pada rumpun keahlian Bisnis, Manajemen, serta Pariwisata. Berlokasi strategis di pusat kota, sekolah ini dikenal dengan komitmen melahirkan lulusan kompetitif melalui jargon <strong>"TERUJI TERPUJI"</strong>. Dengan Kurikulum Merdeka, ekosistem digital berbasis LMS, dan program Teaching Factory (TEFA), sekolah ini mencetak insan terampil siap pakai.
                     </div>
                     
-                    <!-- Google Maps Embed -->
                     <div class="rounded-2xl overflow-hidden shadow-md border-2 border-pastel-100 mb-4 h-64 relative group">
-                        <!-- We use a generic embed coordinates for Bandung center to avoid API key requirement in iframe, but map links to exact place -->
                         <iframe 
                             src="https://maps.google.com/maps?q=SMKN%201%20Bandung&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
@@ -262,11 +256,10 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Guru Pamong -->
                 <div class="bg-white rounded-[2rem] overflow-hidden shadow-soft border border-pastel-100 fade-up">
                     <div class="h-32 bg-pastel-200"></div>
                     <div class="px-8 pb-8 relative">
-                        <img src="https://placehold.co/150x150/d8b4fe/581c87?text=Foto+Ibu+Wini+(PNS)" alt="Guru Pamong" class="w-32 h-32 rounded-full border-4 border-white object-cover -mt-16 mb-4 shadow-md mx-auto">
+                        <img src="gp-titi.jpg" alt="Guru Pamong" class="w-32 h-32 rounded-full border-4 border-white object-cover -mt-16 mb-4 shadow-md mx-auto">
                         <div class="text-center mb-4">
                             <h3 class="text-xl font-bold text-pastel-900">Ibu Wini Guswiani, M.Pd.</h3>
                             <p class="text-pastel-500 font-medium">Guru Pamong SMKN 1 Bandung</p>
@@ -277,11 +270,10 @@
                     </div>
                 </div>
 
-                <!-- Dosen Pamong -->
                 <div class="bg-white rounded-[2rem] overflow-hidden shadow-soft border border-pastel-100 fade-up" style="transition-delay: 150ms;">
                     <div class="h-32 bg-pastel-300"></div>
                     <div class="px-8 pb-8 relative">
-                        <img src="https://placehold.co/150x150/e9d5ff/6b21a8?text=Foto+Prof+Endang+(Toga)" alt="Dosen Pamong" class="w-32 h-32 rounded-full border-4 border-white object-cover -mt-16 mb-4 shadow-md mx-auto">
+                        <img src="dpl-titi.jpg" alt="Dosen Pamong" class="w-32 h-32 rounded-full border-4 border-white object-cover -mt-16 mb-4 shadow-md mx-auto">
                         <div class="text-center mb-4">
                             <h3 class="text-xl font-bold text-pastel-900">Prof. Dr. Endang Supardi, M.Si.</h3>
                             <p class="text-pastel-500 font-medium">Dosen Pamong PPG</p>
@@ -297,7 +289,6 @@
 
     <section id="artefak" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-6 lg:px-8">
-            <!-- Artefak -->
             <div class="text-center mb-16 fade-up">
                 <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-6">Artefak Pembelajaran</h2>
                 <p class="text-pastel-800 mb-8 max-w-2xl mx-auto">
@@ -310,7 +301,6 @@
 
             <hr class="border-pastel-200 mb-16">
 
-            <!-- Refleksi -->
             <div class="fade-up">
                 <div class="flex items-center gap-4 mb-8 justify-center">
                     <i class="fas fa-book-open text-3xl text-pastel-400"></i>
@@ -347,12 +337,11 @@
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
-            <p>&copy; 2026 E-Portofolio Tiara Bela Oktaviani. PPG Prajabatan.</p>
+            <p>© 2026 E-Portofolio Tiara Bela Oktaviani. PPG Prajabatan.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -360,14 +349,12 @@
             menu.classList.toggle('hidden');
         });
 
-        // Close mobile menu on link click
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
             });
         });
 
-        // Scroll Animation (Intersection Observer)
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -378,7 +365,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Run once
+                    observer.unobserve(entry.target); 
                 }
             });
         }, observerOptions);
@@ -387,7 +374,6 @@
             observer.observe(el);
         });
 
-        // Navbar blur on scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
