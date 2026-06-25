@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portofolio | Tiara Bela Oktaviani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        pastel: {
+                            50: '#faf5ff',  // Very light purple background
+                            100: '#f3e8ff', // Soft purple blocks
+                            200: '#e9d5ff', // Borders and hovers
+                            300: '#d8b4fe', // Accents
+                            400: '#c084fc', 
+                            500: '#a855f7', // Primary buttons
+                            800: '#6b21a8', // Headings
+                            900: '#581c87', // Dark text
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(168, 85, 247, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #faf5ff; color: #4c1d95; }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .glass-nav { background: rgba(250, 245, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="antialiased selection:bg-pastel-300 selection:text-pastel-900">
+
+    <nav class="fixed w-full z-50 glass-nav border-b border-pastel-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-10 h-10 bg-pastel-500 rounded-full flex items-center justify-center text-white font-bold text-xl">T</div>
+                    <span class="font-bold text-xl text-pastel-900 tracking-tight">Tiara Bela</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#profil" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Profil</a>
+                    <a href="#tentang" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Tentang</a>
+                    <a href="#inspirasi" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Visi & Tujuan</a>
+                    <a href="#lokasi" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Jejak</a>
+                    <a href="#pembimbing" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Pembimbing</a>
+                    <a href="#artefak" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Artefak</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-pastel-800 hover:text-pastel-500 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-pastel-50 border-t border-pastel-200 shadow-soft">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#profil" class="block px-3 py-2 text-pastel-800 font-medium">Profil</a>
+                <a href="#tentang" class="block px-3 py-2 text-pastel-800 font-medium">Tentang</a>
+                <a href="#inspirasi" class="block px-3 py-2 text-pastel-800 font-medium">Visi & Tujuan</a>
+                <a href="#lokasi" class="block px-3 py-2 text-pastel-800 font-medium">Jejak</a>
+                <a href="#pembimbing" class="block px-3 py-2 text-pastel-800 font-medium">Pembimbing</a>
+                <a href="#artefak" class="block px-3 py-2 text-pastel-800 font-medium">Artefak</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="profil" class="pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto min-h-screen flex items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1 fade-up">
+                <span class="inline-block py-1 px-3 rounded-full bg-pastel-200 text-pastel-800 text-sm font-semibold mb-6">E-Portofolio PPG Prajabatan</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-pastel-900 leading-tight mb-6">
+                    Halo, Saya <br><span class="text-pastel-500">Tiara Bela Oktaviani</span>
+                </h1>
+                <div class="bg-white p-6 rounded-3xl shadow-soft border border-pastel-100 mb-8 space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-pastel-100 rounded-full flex items-center justify-center text-pastel-500"><i class="fas fa-id-card text-xl"></i></div>
+                        <div>
+                            <p class="text-sm text-pastel-800/70">NIM</p>
+                            <p class="font-semibold text-pastel-900">2531105</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-pastel-100 rounded-full flex items-center justify-center text-pastel-500"><i class="fas fa-graduation-cap text-xl"></i></div>
+                        <div>
+                            <p class="text-sm text-pastel-800/70">Program Studi</p>
+                            <p class="font-semibold text-pastel-900">Pendidikan Manajemen Perkantoran dan Layanan Bisnis</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-pastel-100 rounded-full flex items-center justify-center text-pastel-500"><i class="fas fa-envelope text-xl"></i></div>
+                        <div>
+                            <p class="text-sm text-pastel-800/70">E-mail</p>
+                            <p class="font-semibold text-pastel-900">tiarabelaoktav@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#tentang" class="bg-pastel-500 hover:bg-pastel-800 text-white px-8 py-3 rounded-full font-medium transition-all shadow-md hover:shadow-lg">Kenal Lebih Jauh</a>
+                    <a href="#artefak" class="bg-white border-2 border-pastel-200 text-pastel-800 hover:border-pastel-500 hover:text-pastel-500 px-8 py-3 rounded-full font-medium transition-all">Lihat Artefak</a>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 flex justify-center fade-up relative">
+                <!-- Decorative background blob -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-pastel-200 to-pastel-100 rounded-full blur-3xl opacity-60 w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10"></div>
+                <!-- Profile Image (Toga) -->
+                <img src="https://placehold.co/500x600/d8b4fe/581c87?text=Foto+Wanita+Kalung+Toga" alt="Tiara Bela Oktaviani - Toga" class="rounded-[2.5rem] shadow-2xl object-cover border-8 border-white w-[300px] h-[400px] lg:w-[400px] lg:h-[500px] rotate-3 hover:rotate-0 transition-all duration-500">
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-up relative">
+                    <!-- Selfie Image -->
+                    <div class="absolute -inset-4 bg-pastel-200 rounded-[2.5rem] transform -rotate-3 z-0"></div>
+                    <img src="https://placehold.co/400x500/e9d5ff/6b21a8?text=Foto+Selfie+Tiara" alt="Selfie Tiara" class="relative z-10 rounded-[2rem] shadow-lg w-full h-auto object-cover">
+                </div>
+                <div class="fade-up">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-6 flex items-center gap-3">
+                        <i class="fas fa-leaf text-pastel-400"></i> Tentang Saya
+                    </h2>
+                    <div class="space-y-4 text-pastel-800 leading-relaxed text-justify">
+                        <p>
+                            Saya, <strong>Tiara Bela Oktaviani</strong> adalah seorang gadis Sunda yang lahir dan dibesarkan di Kota Bandung. Saya memiliki jiwa yang senang akan kehangatan dan kebahagiaan, serta percaya bahwa hidup di dunia hanyalah sementara. Oleh karena itu, saya berusaha mengisi kehidupan dengan hal-hal yang bermanfaat bagi sesama.
+                        </p>
+                        <p>
+                            Menjadi seorang pendidik merupakan salah satu cara saya untuk berbagi ilmu, menebarkan kebaikan, dan memberikan manfaat yang diharapkan dapat menjadi bekal di dunia maupun di akhirat. 
+                        </p>
+                        <p>
+                            Saat ini, saya sedang menjalani <strong>Praktik Pengalaman Lapangan (PPL) dalam Program Pendidikan Profesi Guru (PPG) di SMKN 1 Bandung</strong> sebagai bagian dari proses pengembangan kompetensi dan pengalaman profesional saya sebagai calon pendidik. Melalui kesempatan ini, saya terus belajar untuk menjadi guru yang tidak hanya mampu mengajar, tetapi juga menginspirasi dan memberikan dampak positif bagi peserta didik.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-pastel-900 text-center relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#d8b4fe 1px, transparent 1px); background-size: 20px 20px;"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10 fade-up">
+            <i class="fas fa-quote-left text-5xl text-pastel-400 mb-6 opacity-50"></i>
+            <h3 class="text-2xl md:text-3xl font-medium text-pastel-50 leading-relaxed italic mb-8">
+                "Tidak semua kebaikan dikenang, tetapi setiap kebaikan akan menemukan jalannya untuk kembali. Maka selama masih diberi kesempatan hidup, saya memilih untuk menjadi alasan seseorang merasa terbantu, didengar, dan percaya pada mimpinya."
+            </h3>
+            <p class="text-pastel-300 font-semibold text-lg">— Tiara Bela Oktaviani</p>
+        </div>
+    </section>
+
+    <section id="inspirasi" class="py-20 bg-pastel-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-4">Visi & Inspirasi</h2>
+                <div class="h-1 w-20 bg-pastel-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Inspirasi Card -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 hover:-translate-y-2 transition-transform duration-300 fade-up">
+                    <div class="w-14 h-14 bg-pastel-100 rounded-2xl flex items-center justify-center text-pastel-500 mb-6">
+                        <i class="fas fa-lightbulb text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pastel-900 mb-4">Sumber Inspirasi</h3>
+                    <p class="text-pastel-800 leading-relaxed text-justify">
+                        Inspirasi saya menjadi guru berasal dari pengalaman mengajar anak-anak yang hidup dengan berbagai keterbatasan, namun memiliki semangat belajar yang tinggi. Kegigihan mereka mengajarkan saya arti perjuangan, rasa syukur, dan empati. Pengalaman tersebut semakin menguatkan keinginan saya untuk berkontribusi dalam dunia pendidikan dan membantu setiap anak memperoleh kesempatan belajar yang terbaik.
+                    </p>
+                </div>
+
+                <!-- Tujuan Card -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 hover:-translate-y-2 transition-transform duration-300 fade-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-pastel-100 rounded-2xl flex items-center justify-center text-pastel-500 mb-6">
+                        <i class="fas fa-bullseye text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pastel-900 mb-4">Tujuan Mengabdi</h3>
+                    <p class="text-pastel-800 leading-relaxed text-justify">
+                        Tujuan saya menjadi guru adalah menebarkan manfaat dan kebaikan melalui pendidikan. Saya ingin mendampingi peserta didik dalam proses belajar dan tumbuh menjadi pribadi yang percaya diri, berkarakter, serta memiliki kepedulian terhadap sesama. Saya percaya bahwa setiap anak memiliki potensi berharga. Saya berharap dapat memberikan kontribusi bermakna bagi masyarakat dan menjadi bagian dari upaya mencerdaskan bangsa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lokasi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Bandung -->
+                <div class="fade-up">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-pastel-100 rounded-full flex items-center justify-center text-pastel-500">
+                            <i class="fas fa-city text-xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-pastel-900">Keunikan Kota Kelahiran</h2>
+                    </div>
+                    <div class="space-y-4 text-pastel-800 leading-relaxed text-justify bg-pastel-50 p-6 rounded-3xl">
+                        <p>
+                            Saya lahir dan besar di <strong>Kota Bandung</strong>, sebuah kota yang dikenal dengan kekayaan kuliner serta budaya Sundanya yang begitu kuat. Keunikan Bandung tidak hanya terletak pada beragam makanan khas seperti batagor, siomay, surabi, dan seblak, tetapi juga pada nilai-nilai budaya yang masih dijaga.
+                        </p>
+                        <p>
+                            Sebagai putri daerah Sunda, saya memiliki kecintaan yang mendalam terhadap budaya Sunda mulai dari bahasa, seni, adat istiadat, hingga kesopanan dan keramahan yang menjadi ciri khas. Bagi saya, budaya Sunda bukan sekadar warisan, melainkan identitas yang membentuk cara berpikir, bersikap, dan berinteraksi.
+                        </p>
+                        <p>
+                            Keberagaman kuliner dan kekayaan budaya ini menjadi sumber inspirasi bagi saya untuk terus menghargai tradisi dan memperkenalkan budaya Sunda kepada generasi muda.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SMKN 1 Bandung -->
+                <div class="fade-up" style="transition-delay: 150ms;">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-pastel-100 rounded-full flex items-center justify-center text-pastel-500">
+                            <i class="fas fa-school text-xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-pastel-900">Tempat PPL: SMKN 1 Bandung</h2>
+                    </div>
+                    <div class="text-pastel-800 leading-relaxed text-justify mb-6">
+                        SMK Negeri 1 Bandung merupakan salah satu SMK negeri perintis di Kota Bandung yang berakreditasi A dan berfokus pada rumpun keahlian Bisnis, Manajemen, serta Pariwisata. Berlokasi strategis di pusat kota, sekolah ini dikenal dengan komitmen melahirkan lulusan kompetitif melalui jargon <strong>"TERUJI TERPUJI"</strong>. Dengan Kurikulum Merdeka, ekosistem digital berbasis LMS, dan program Teaching Factory (TEFA), sekolah ini mencetak insan terampil siap pakai.
+                    </div>
+                    
+                    <!-- Google Maps Embed -->
+                    <div class="rounded-2xl overflow-hidden shadow-md border-2 border-pastel-100 mb-4 h-64 relative group">
+                        <!-- We use a generic embed coordinates for Bandung center to avoid API key requirement in iframe, but map links to exact place -->
+                        <iframe 
+                            src="https://maps.google.com/maps?q=SMKN%201%20Bandung&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div class="absolute inset-0 bg-pastel-900/20 group-hover:bg-transparent transition-all pointer-events-none"></div>
+                    </div>
+                    <a href="https://maps.app.goo.gl/o8bshnuti9khPCRi7" target="_blank" class="inline-flex items-center gap-2 text-pastel-500 hover:text-pastel-800 font-medium transition-colors">
+                        <i class="fas fa-map-marker-alt"></i> Buka di Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pembimbing" class="py-20 bg-pastel-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-4">Sosok Pembimbing</h2>
+                <div class="h-1 w-20 bg-pastel-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Guru Pamong -->
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-soft border border-pastel-100 fade-up">
+                    <div class="h-32 bg-pastel-200"></div>
+                    <div class="px-8 pb-8 relative">
+                        <img src="https://placehold.co/150x150/d8b4fe/581c87?text=Foto+Ibu+Wini+(PNS)" alt="Guru Pamong" class="w-32 h-32 rounded-full border-4 border-white object-cover -mt-16 mb-4 shadow-md mx-auto">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-bold text-pastel-900">Ibu Wini Guswiani, M.Pd.</h3>
+                            <p class="text-pastel-500 font-medium">Guru Pamong SMKN 1 Bandung</p>
+                        </div>
+                        <p class="text-pastel-800 text-sm leading-relaxed text-justify">
+                            Beliau adalah sosok pendidik yang hangat, ramah, dan inspiratif. Selama pendampingan, saya banyak belajar cara beliau mengajar yang membuat peserta didik aktif dan antusias. Cara beliau berkomunikasi yang santun dan nyaman membuat saya memahami pentingnya membangun hubungan positif. Semangat, ketulusan, dan dedikasi beliau memberikan inspirasi berharga bagi perjalanan saya.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dosen Pamong -->
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-soft border border-pastel-100 fade-up" style="transition-delay: 150ms;">
+                    <div class="h-32 bg-pastel-300"></div>
+                    <div class="px-8 pb-8 relative">
+                        <img src="https://placehold.co/150x150/e9d5ff/6b21a8?text=Foto+Prof+Endang+(Toga)" alt="Dosen Pamong" class="w-32 h-32 rounded-full border-4 border-white object-cover -mt-16 mb-4 shadow-md mx-auto">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-bold text-pastel-900">Prof. Dr. Endang Supardi, M.Si.</h3>
+                            <p class="text-pastel-500 font-medium">Dosen Pamong PPG</p>
+                        </div>
+                        <p class="text-pastel-800 text-sm leading-relaxed text-justify">
+                            Beliau adalah sosok akademisi yang berwawasan luas, profesional, dan inspiratif. Melalui bimbingan yang diberikan, saya terdorong untuk terus belajar, berpikir kritis, dan mengembangkan kemampuan diri agar mampu menjadi guru adaptif. Dedikasi, pengalaman, serta komitmen beliau dalam dunia pendidikan menjadi teladan yang memotivasi saya untuk memberikan kontribusi terbaik.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="artefak" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <!-- Artefak -->
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-6">Artefak Pembelajaran</h2>
+                <p class="text-pastel-800 mb-8 max-w-2xl mx-auto">
+                    Kumpulan hasil kerja, perangkat pembelajaran, dan dokumentasi yang telah saya susun selama mengikuti program Pendidikan Profesi Guru (PPG). Berisi Modul Ajar, LKPD, dan PPT Bahan Ajar.
+                </p>
+                <a href="https://drive.google.com/drive/folders/1tLnYy3SFqXCawu8g4T7i52YCK462H__k" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-pastel-400 to-pastel-500 hover:from-pastel-500 hover:to-pastel-800 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    <i class="fab fa-google-drive text-2xl"></i> Akses Folder Artefak di Google Drive
+                </a>
+            </div>
+
+            <hr class="border-pastel-200 mb-16">
+
+            <!-- Refleksi -->
+            <div class="fade-up">
+                <div class="flex items-center gap-4 mb-8 justify-center">
+                    <i class="fas fa-book-open text-3xl text-pastel-400"></i>
+                    <h2 class="text-3xl font-bold text-pastel-900">Refleksi PPL</h2>
+                </div>
+                
+                <div class="bg-pastel-50 p-8 md:p-10 rounded-[2rem] shadow-soft border border-pastel-100">
+                    <div class="space-y-6 text-pastel-800 leading-loose text-justify">
+                        <p>
+                            Pelaksanaan Praktik Pengalaman Lapangan (PPL) selama satu semester ini menjadi pengalaman yang sangat berharga dalam perjalanan saya sebagai calon pendidik. Selama proses ini, saya belajar mengelola diri dalam berbagai aspek, mulai dari manajemen waktu, menghadapi berbagai kondisi yang tidak selalu berjalan sesuai rencana, hingga mengendalikan emosi dalam menjalankan tanggung jawab sebagai calon guru. 
+                        </p>
+                        <p>
+                            Berbagai tantangan yang saya hadapi mengajarkan saya untuk melihat setiap kesulitan sebagai bagian dari proses bertumbuh dan berkembang. Saya bersyukur karena mendapatkan banyak ilmu dan pengalaman dari guru pamong, peserta didik, teman-teman seperjuangan, serta keluarga yang senantiasa memberikan dukungan.
+                        </p>
+                        <p>
+                            Selain pengalaman profesional, PPL juga menjadi sarana pembelajaran spiritual. Saya belajar untuk lebih bersabar, bersyukur, dan bertawakal kepada Allah SWT. Pengalaman ini menguatkan keyakinan saya bahwa menjadi guru bukan hanya tentang menyampaikan ilmu, tetapi menebarkan manfaat dan kebaikan. Saya berharap dapat terus berkembang menjadi pendidik yang profesional, berkarakter, dan menjadikan profesi ini sebagai jalan memperoleh keberkahan di dunia dan akhirat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-pastel-900 text-pastel-200 py-10 text-center border-t border-pastel-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-center gap-4 mb-6">
+                <a href="mailto:tiarabelaoktav@gmail.com" class="w-10 h-10 rounded-full bg-pastel-800 flex items-center justify-center hover:bg-pastel-500 hover:text-white transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-pastel-800 flex items-center justify-center hover:bg-pastel-500 hover:text-white transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-pastel-800 flex items-center justify-center hover:bg-pastel-500 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p>&copy; 2026 E-Portofolio Tiara Bela Oktaviani. PPG Prajabatan.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Scroll Animation (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Navbar blur on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm');
+                nav.classList.replace('glass-nav', 'bg-white/90');
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.classList.replace('bg-white/90', 'glass-nav');
+            }
+        });
+    </script>
+</body>
+</html>
