@@ -38,6 +38,20 @@
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
         .glass-nav { background: rgba(250, 245, 255, 0.8); backdrop-filter: blur(10px); }
+        
+        /* Iframe styling for Drive and Youtube */
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e9d5ff;
+        }
+        .aspect-shorts {
+            aspect-ratio: 9 / 16;
+            max-width: 350px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-pastel-300 selection:text-pastel-900">
@@ -49,33 +63,36 @@
                     <div class="w-10 h-10 bg-pastel-500 rounded-full flex items-center justify-center text-white font-bold text-xl">T</div>
                     <span class="font-bold text-xl text-pastel-900 tracking-tight">Tiara Bela</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden lg:flex space-x-6 text-sm">
                     <a href="#profil" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Profil</a>
                     <a href="#tentang" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Tentang</a>
                     <a href="#inspirasi" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Visi & Tujuan</a>
                     <a href="#lokasi" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Jejak</a>
                     <a href="#pembimbing" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Pembimbing</a>
-                    <a href="#artefak" class="text-pastel-800 hover:text-pastel-500 font-medium transition-colors">Artefak</a>
+                    <a href="#semester1" class="text-pastel-800 hover:text-pastel-500 font-bold transition-colors">Semester 1</a>
+                    <a href="#semester2" class="text-pastel-800 hover:text-pastel-500 font-bold transition-colors">Semester 2</a>
                 </div>
-                <div class="md:hidden flex items-center">
+                <div class="lg:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-pastel-800 hover:text-pastel-500 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-pastel-50 border-t border-pastel-200 shadow-soft">
+        <div id="mobile-menu" class="hidden lg:hidden bg-pastel-50 border-t border-pastel-200 shadow-soft">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
                 <a href="#profil" class="block px-3 py-2 text-pastel-800 font-medium">Profil</a>
                 <a href="#tentang" class="block px-3 py-2 text-pastel-800 font-medium">Tentang</a>
                 <a href="#inspirasi" class="block px-3 py-2 text-pastel-800 font-medium">Visi & Tujuan</a>
                 <a href="#lokasi" class="block px-3 py-2 text-pastel-800 font-medium">Jejak</a>
                 <a href="#pembimbing" class="block px-3 py-2 text-pastel-800 font-medium">Pembimbing</a>
-                <a href="#artefak" class="block px-3 py-2 text-pastel-800 font-medium">Artefak</a>
+                <a href="#semester1" class="block px-3 py-2 text-pastel-800 font-bold">Semester 1</a>
+                <a href="#semester2" class="block px-3 py-2 text-pastel-800 font-bold">Semester 2</a>
             </div>
         </div>
     </nav>
 
+    <!-- Header Profil -->
     <section id="profil" class="pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto min-h-screen flex items-center">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="order-2 lg:order-1 fade-up">
@@ -106,24 +123,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex gap-4">
+                <div class="flex flex-wrap gap-4">
                     <a href="#tentang" class="bg-pastel-500 hover:bg-pastel-800 text-white px-8 py-3 rounded-full font-medium transition-all shadow-md hover:shadow-lg">Kenal Lebih Jauh</a>
-                    <a href="#artefak" class="bg-white border-2 border-pastel-200 text-pastel-800 hover:border-pastel-500 hover:text-pastel-500 px-8 py-3 rounded-full font-medium transition-all">Lihat Artefak</a>
+                    <a href="#semester1" class="bg-white border-2 border-pastel-200 text-pastel-800 hover:border-pastel-500 hover:text-pastel-500 px-8 py-3 rounded-full font-medium transition-all">Artefak S1</a>
                 </div>
             </div>
             
             <div class="order-1 lg:order-2 flex justify-center fade-up relative">
                 <div class="absolute inset-0 bg-gradient-to-tr from-pastel-200 to-pastel-100 rounded-full blur-3xl opacity-60 w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10"></div>
-                
-                <!-- Profile Image (Toga) - FIX: Crop paksa bagian kanan foto -->
-                <div class="w-[300px] h-[400px] lg:w-[450px] lg:h-[500px] rounded-[2.5rem] shadow-2xl border-8 border-white bg-white overflow-hidden rotate-3 hover:rotate-0 transition-all duration-500 flex justify-start items-center">
+                <div class="w-[300px] h-[400px] lg:w-[450px] lg:h-[500px] rounded-[2.5rem] shadow-2xl border-8 border-white bg-white overflow-hidden rotate-3 hover:rotate-0 transition-all duration-500 flex justify-center items-center">
                     <img src="wisuda-titi.jpg" alt="Tiara Bela Oktaviani - Toga" class="w-[150%] max-w-none h-full object-cover object-[15%_center]">
                 </div>
             </div>
-
         </div>
     </section>
 
+    <!-- Tentang -->
     <section id="tentang" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -151,9 +166,9 @@
         </div>
     </section>
 
+    <!-- Quote -->
     <section class="py-24 bg-pastel-900 text-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#d8b4fe 1px, transparent 1px); background-size: 20px 20px;"></div>
-        
         <div class="max-w-4xl mx-auto px-6 relative z-10 fade-up">
             <i class="fas fa-quote-left text-5xl text-pastel-400 mb-6 opacity-50"></i>
             <h3 class="text-2xl md:text-3xl font-medium text-pastel-50 leading-relaxed italic mb-8">
@@ -163,13 +178,13 @@
         </div>
     </section>
 
+    <!-- Inspirasi & Tujuan -->
     <section id="inspirasi" class="py-20 bg-pastel-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16 fade-up">
                 <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-4">Visi & Inspirasi</h2>
                 <div class="h-1 w-20 bg-pastel-400 mx-auto rounded-full"></div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 hover:-translate-y-2 transition-transform duration-300 fade-up">
                     <div class="w-14 h-14 bg-pastel-100 rounded-2xl flex items-center justify-center text-pastel-500 mb-6">
@@ -180,7 +195,6 @@
                         Inspirasi saya menjadi guru berasal dari pengalaman mengajar anak-anak yang hidup dengan berbagai keterbatasan, namun memiliki semangat belajar yang tinggi. Kegigihan mereka mengajarkan saya arti perjuangan, rasa syukur, dan empati. Pengalaman tersebut semakin menguatkan keinginan saya untuk berkontribusi dalam dunia pendidikan dan membantu setiap anak memperoleh kesempatan belajar yang terbaik.
                     </p>
                 </div>
-
                 <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 hover:-translate-y-2 transition-transform duration-300 fade-up" style="transition-delay: 100ms;">
                     <div class="w-14 h-14 bg-pastel-100 rounded-2xl flex items-center justify-center text-pastel-500 mb-6">
                         <i class="fas fa-bullseye text-2xl"></i>
@@ -194,6 +208,7 @@
         </div>
     </section>
 
+    <!-- Lokasi -->
     <section id="lokasi" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -225,18 +240,12 @@
                         <h2 class="text-3xl font-bold text-pastel-900">Tempat PPL: SMKN 1 Bandung</h2>
                     </div>
                     <div class="text-pastel-800 leading-relaxed text-justify mb-6">
-                        SMK Negeri 1 Bandung merupakan salah satu SMK negeri perintis di Kota Bandung yang berakreditasi A dan berfokus pada rumpun keahlian Bisnis, Manajemen, serta Pariwisata. Berlokasi strategis di pusat kota, sekolah ini dikenal dengan komitmen melahirkan lulusan kompetitif melalui jargon <strong>"TERUJI TERPUJI"</strong>. Dengan Kurikulum Merdeka, ekosistem digital berbasis LMS, dan program Teaching Factory (TEFA), sekolah ini mencetak insan terampil siap pakai.
+                        SMK Negeri 1 Bandung merupakan salah satu SMK negeri perintis di Kota Bandung yang berakreditasi A dan berfokus pada rumpun keahlian Bisnis, Manajemen, serta Pariwisata. Berlokasi strategis di pusat kota, sekolah ini dikenal dengan komitmen melahirkan lulusan kompetitif melalui jargon <strong>"TERUJI TERPUJI"</strong>.
                     </div>
-                    
                     <div class="rounded-2xl overflow-hidden shadow-md border-2 border-pastel-100 mb-4 h-64 relative group">
                         <iframe 
                             src="https://maps.google.com/maps?q=SMKN%201%20Bandung&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                         <div class="absolute inset-0 bg-pastel-900/20 group-hover:bg-transparent transition-all pointer-events-none"></div>
                     </div>
@@ -248,13 +257,13 @@
         </div>
     </section>
 
+    <!-- Pembimbing -->
     <section id="pembimbing" class="py-20 bg-pastel-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16 fade-up">
                 <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-4">Sosok Pembimbing</h2>
                 <div class="h-1 w-20 bg-pastel-400 mx-auto rounded-full"></div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="bg-white rounded-[2rem] overflow-hidden shadow-soft border border-pastel-100 fade-up">
                     <div class="h-32 bg-pastel-200"></div>
@@ -265,7 +274,7 @@
                             <p class="text-pastel-500 font-medium">Guru Pamong SMKN 1 Bandung</p>
                         </div>
                         <p class="text-pastel-800 text-sm leading-relaxed text-justify">
-                            Beliau adalah sosok pendidik yang hangat, ramah, dan inspiratif. Selama pendampingan, saya banyak belajar cara beliau mengajar yang membuat peserta didik aktif dan antusias. Cara beliau berkomunikasi yang santun dan nyaman membuat saya memahami pentingnya membangun hubungan positif. Semangat, ketulusan, dan dedikasi beliau memberikan inspirasi berharga bagi perjalanan saya.
+                            Beliau adalah sosok pendidik yang hangat, ramah, dan inspiratif. Selama pendampingan, saya banyak belajar cara beliau mengajar yang membuat peserta didik aktif dan antusias. Cara beliau berkomunikasi yang santun dan nyaman membuat saya memahami pentingnya membangun hubungan positif.
                         </p>
                     </div>
                 </div>
@@ -279,7 +288,7 @@
                             <p class="text-pastel-500 font-medium">Dosen Pamong PPG</p>
                         </div>
                         <p class="text-pastel-800 text-sm leading-relaxed text-justify">
-                            Beliau adalah sosok akademisi yang berwawasan luas, profesional, dan inspiratif. Melalui bimbingan yang diberikan, saya terdorong untuk terus belajar, berpikir kritis, dan mengembangkan kemampuan diri agar mampu menjadi guru adaptif. Dedikasi, pengalaman, serta komitmen beliau dalam dunia pendidikan menjadi teladan yang memotivasi saya untuk memberikan kontribusi terbaik.
+                            Beliau adalah sosok akademisi yang berwawasan luas, profesional, dan inspiratif. Melalui bimbingan yang diberikan, saya terdorong untuk terus belajar, berpikir kritis, dan mengembangkan kemampuan diri agar mampu menjadi guru adaptif. Dedikasi beliau menjadi teladan memotivasi saya.
                         </p>
                     </div>
                 </div>
@@ -287,26 +296,23 @@
         </div>
     </section>
 
-    <section id="artefak" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <!-- SEMESTER 1 : Artefak & Refleksi -->
+    <section id="semester1" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16 fade-up">
-                <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-6">Artefak Pembelajaran</h2>
-                <p class="text-pastel-800 mb-8 max-w-2xl mx-auto">
-                    Kumpulan hasil kerja, perangkat pembelajaran, dan dokumentasi yang telah saya susun selama mengikuti program Pendidikan Profesi Guru (PPG). Berisi Modul Ajar, LKPD, dan PPT Bahan Ajar.
+                <span class="inline-block py-1 px-4 rounded-full bg-pastel-100 text-pastel-600 text-sm font-semibold mb-4">Semester 1</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-6">Artefak & Refleksi PPL</h2>
+                <p class="text-pastel-800 mb-8 max-w-3xl mx-auto">
+                    Kumpulan hasil kerja, perangkat pembelajaran, dan dokumentasi yang telah saya susun selama mengikuti program Pendidikan Profesi Guru (PPG) di Semester 1.
                 </p>
-                <a href="https://drive.google.com/drive/folders/1tLnYy3SFqXCawu8g4T7i52YCK462H__k" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-pastel-400 to-pastel-500 hover:from-pastel-500 hover:to-pastel-800 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-google-drive text-2xl"></i> Akses Folder Artefak di Google Drive
-                </a>
             </div>
 
-            <hr class="border-pastel-200 mb-16">
-
-            <div class="fade-up">
-                <div class="flex items-center gap-4 mb-8 justify-center">
-                    <i class="fas fa-book-open text-3xl text-pastel-400"></i>
-                    <h2 class="text-3xl font-bold text-pastel-900">Refleksi PPL</h2>
+            <!-- Refleksi PPL -->
+            <div class="fade-up mb-16 max-w-4xl mx-auto">
+                <div class="flex items-center gap-4 mb-6 justify-center">
+                    <i class="fas fa-book-reader text-3xl text-pastel-400"></i>
+                    <h3 class="text-2xl font-bold text-pastel-900">Refleksi PPL Semester 1</h3>
                 </div>
-                
                 <div class="bg-pastel-50 p-8 md:p-10 rounded-[2rem] shadow-soft border border-pastel-100">
                     <div class="space-y-6 text-pastel-800 leading-loose text-justify">
                         <p>
@@ -320,6 +326,140 @@
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Pratinjau Artefak Semester 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-up">
+                
+                <!-- Modul -->
+                <div class="bg-white p-4 rounded-[1.5rem] shadow-md border border-pastel-100">
+                    <h4 class="font-bold text-pastel-900 text-center mb-4"><i class="fas fa-file-pdf text-pastel-400 mr-2"></i>Modul Ajar</h4>
+                    <div class="iframe-container h-80 mb-4">
+                        <iframe src="https://drive.google.com/file/d/1uNyNgiP4OPizBsog7HEHM9uniE31rv8Y/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1uNyNgiP4OPizBsog7HEHM9uniE31rv8Y/view?usp=drive_link" target="_blank" class="block w-full text-center bg-pastel-100 hover:bg-pastel-200 text-pastel-800 py-2 rounded-xl transition-colors text-sm font-medium">Buka di Tab Baru</a>
+                </div>
+
+                <!-- LKPD -->
+                <div class="bg-white p-4 rounded-[1.5rem] shadow-md border border-pastel-100">
+                    <h4 class="font-bold text-pastel-900 text-center mb-4"><i class="fas fa-file-alt text-pastel-400 mr-2"></i>LKPD</h4>
+                    <div class="iframe-container h-80 mb-4">
+                        <iframe src="https://drive.google.com/file/d/1rMWTUedS70SwekDvpaYKMy7JNM1fNuYe/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1rMWTUedS70SwekDvpaYKMy7JNM1fNuYe/view?usp=drive_link" target="_blank" class="block w-full text-center bg-pastel-100 hover:bg-pastel-200 text-pastel-800 py-2 rounded-xl transition-colors text-sm font-medium">Buka di Tab Baru</a>
+                </div>
+
+                <!-- PPT -->
+                <div class="bg-white p-4 rounded-[1.5rem] shadow-md border border-pastel-100">
+                    <h4 class="font-bold text-pastel-900 text-center mb-4"><i class="fas fa-file-powerpoint text-pastel-400 mr-2"></i>Bahan Ajar PPT</h4>
+                    <div class="iframe-container h-80 mb-4">
+                        <iframe src="https://drive.google.com/file/d/1CvanrO21DTrGCvgI2XjmpZ1AhrLA02GS/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1CvanrO21DTrGCvgI2XjmpZ1AhrLA02GS/view?usp=drive_link" target="_blank" class="block w-full text-center bg-pastel-100 hover:bg-pastel-200 text-pastel-800 py-2 rounded-xl transition-colors text-sm font-medium">Buka di Tab Baru</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEMESTER 2 : Siklus Pembelajaran -->
+    <section id="semester2" class="py-20 bg-pastel-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <span class="inline-block py-1 px-4 rounded-full bg-pastel-200 text-pastel-800 text-sm font-semibold mb-4">Semester 2</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-pastel-900 mb-6">Siklus Pembelajaran & Praktik</h2>
+                <p class="text-pastel-800 mb-8 max-w-3xl mx-auto">
+                    Pada Semester 2 ini, kegiatan terbagi menjadi 4 siklus pembelajaran. Berikut adalah penjelasan siklus yang ada pada file LK serta pratinjau media dan video praktik pembelajarannya.
+                </p>
+                <div class="h-1 w-20 bg-pastel-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Siklus 1 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 fade-up">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-pastel-500 rounded-full flex justify-center items-center text-white font-bold text-lg">1</div>
+                        <h3 class="text-2xl font-bold text-pastel-900">Siklus 1: Persiapan & Pengelolaan Rapat</h3>
+                    </div>
+                    <p class="text-pastel-800 mb-6 text-justify leading-relaxed">
+                        Pada siklus pertama, pembelajaran difokuskan pada pemahaman dasar pengelolaan rapat. Melalui apersepsi video situasi rapat yang kacau, peserta didik diajak menganalisis pentingnya persiapan, penentuan agenda, pembagian peran, dan etika komunikasi. Kegiatan inti melibatkan diskusi kelompok (Collaborate and Communicate) untuk merancang persiapan menuju rapat yang profesional.
+                    </p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold text-pastel-800 mb-2">PPT Pembelajaran</h4>
+                            <div class="iframe-container h-80 mb-4">
+                                <iframe src="https://drive.google.com/file/d/1GBw0Dvg_7JbRktN3vu5BhIKT-jFpuvQN/view?usp=sharing" width="100%" height="100%" loading="lazy"></iframe>
+                            </div>
+                            <a href="https://canva.link/b3igbaae7bbfvx6" target="_blank" class="text-sm text-pastel-500 hover:text-pastel-800 underline"><i class="fas fa-external-link-alt"></i> Buka PPT di Canva</a>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-pastel-800 mb-2">Video Praktik (YouTube Shorts)</h4>
+                            <div class="iframe-container aspect-shorts h-80 w-full mb-4 bg-black flex justify-center">
+                                <iframe src="https://www.youtube.com/embed/dFRhgCcqZeE" class="w-full h-full" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Siklus 2 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 fade-up">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-pastel-500 rounded-full flex justify-center items-center text-white font-bold text-lg">2</div>
+                        <h3 class="text-2xl font-bold text-pastel-900">Siklus 2: Praktik Rapat Luring (Offline)</h3>
+                    </div>
+                    <p class="text-pastel-800 mb-6 text-justify leading-relaxed">
+                        Siklus kedua melibatkan kegiatan <i>Experiential Learning</i> berupa praktik rapat secara langsung (luring). Peserta didik mempraktikkan keterampilan komunikasi, pembagian tugas, dan mendokumentasikan rapat melalui perekaman video. Siklus ini juga melatih empati dan kemampuan adaptasi peserta didik secara dinamis ketika menghadapi perubahan peran dan situasi secara langsung di lapangan.
+                    </p>
+                    <div class="w-full max-w-3xl mx-auto">
+                        <h4 class="font-semibold text-pastel-800 mb-2 text-center">Video Pembelajaran</h4>
+                        <div class="iframe-container aspect-video mb-4">
+                            <iframe src="https://www.youtube.com/embed/Hz2XeWo0Y7A" width="100%" height="100%" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Siklus 3 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 fade-up">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-pastel-500 rounded-full flex justify-center items-center text-white font-bold text-lg">3</div>
+                        <h3 class="text-2xl font-bold text-pastel-900">Siklus 3: Perencanaan Rapat Online (Webinar)</h3>
+                    </div>
+                    <p class="text-pastel-800 mb-6 text-justify leading-relaxed">
+                        Pada siklus ketiga, kegiatan difokuskan pada tata cara pengelolaan rapat online. Berpandukan LKPD digital, peserta didik mencari informasi, berdiskusi, dan bekerja sama merancang konsep acara seminar online secara komprehensif. Proses ini melatih keberanian presentasi (Public Speaking), tanggung jawab dalam peran masing-masing, serta keterampilan literasi digital.
+                    </p>
+                    <div class="w-full max-w-md mx-auto">
+                        <h4 class="font-semibold text-pastel-800 mb-2 text-center">Video Praktik (YouTube Shorts)</h4>
+                        <div class="iframe-container aspect-shorts h-96 w-full mb-4 bg-black">
+                            <iframe src="https://www.youtube.com/embed/fYwlGcWMxSk" class="w-full h-full" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Siklus 4 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-pastel-100 fade-up">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-pastel-500 rounded-full flex justify-center items-center text-white font-bold text-lg">4</div>
+                        <h3 class="text-2xl font-bold text-pastel-900">Siklus 4: Pelaksanaan Proyek Seminar Online</h3>
+                    </div>
+                    <p class="text-pastel-800 mb-6 text-justify leading-relaxed">
+                        Siklus keempat merupakan puncak dari seluruh rangkaian kegiatan berbasis proyek (PjBL). Peserta didik dalam kelompok besar mengadakan "Webinar Bersama" menggunakan perangkat digital (laptop/gawai). Proyek ini mewujudkan simulasi nyata dunia kerja, melatih kemandirian, manajemen waktu yang terstruktur, kolaborasi aktif, serta penguasaan teknologi layanan bisnis.
+                    </p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold text-pastel-800 mb-2 text-center">Video Praktik 1</h4>
+                            <div class="iframe-container aspect-video mb-4">
+                                <iframe src="https://www.youtube.com/embed/uAW7nj0Y63c" width="100%" height="100%" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-pastel-800 mb-2 text-center">Video Praktik 2</h4>
+                            <div class="iframe-container aspect-video mb-4">
+                                <iframe src="https://www.youtube.com/embed/yWZ9ZaU0M00" width="100%" height="100%" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
